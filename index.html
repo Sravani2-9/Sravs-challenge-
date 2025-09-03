@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Pizza</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #fff7f0;
+    }
+    h1 {
+      color: #e74c3c;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      max-width: 500px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .toppings label {
+      font-weight: normal;
+    }
+    button {
+      background-color: #e74c3c;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🍕 Order Your Pizza</h1>
+
+  <form action="/submit-order" method="POST">
+    <!-- Customer Name -->
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <!-- Pizza Size -->
+    <label for="size">Select Pizza Size:</label>
+    <select id="size" name="size" required>
+      <option value="">-- Choose Size --</option>
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+      <option value="extra_large">Extra Large</option>
+    </select>
+
+    <!-- Crust Type -->
+    <label for="crust">Choose Crust Type:</label>
+    <select id="crust" name="crust" required>
+      <option value="">-- Choose Crust --</option>
+      <option value="thin">Thin Crust</option>
+      <option value="thick">Thick Crust</option>
+      <option value="cheese_stuffed">Cheese-Stuffed Crust</option>
+      <option value="gluten_free">Gluten-Free</option>
+    </select>
+
+    <!-- Toppings -->
+    <fieldset class="toppings">
+      <legend><strong>Choose Toppings:</strong></legend>
+      <label><input type="checkbox" name="toppings" value="pepperoni"> Pepperoni</label><br>
+      <label><input type="checkbox" name="toppings" value="mushrooms"> Mushrooms</label><br>
+      <label><input type="checkbox" name="toppings" value="onions"> Onions</label><br>
+      <label><input type="checkbox" name="toppings" value="sausage"> Sausage</label><br>
+      <label><input type="checkbox" name="toppings" value="bacon"> Bacon</label><br>
+      <label><input type="checkbox" name="toppings" value="extra_cheese"> Extra Cheese</label><br>
+      <label><input type="checkbox" name="toppings" value="black_olives"> Black Olives</label><br>
+      <label><input type="checkbox" name="toppings" value="green_peppers"> Green Peppers</label><br>
+    </fieldset>
+
+    <!-- Address -->
+    <label for="address">Delivery Address:</label>
+    <textarea id="address" name="address" rows="4" required></textarea>
+
+    <!-- Submit -->
+    <button type="submit">Place Order</button>
+  </form>
+
+</body>
+</html>
